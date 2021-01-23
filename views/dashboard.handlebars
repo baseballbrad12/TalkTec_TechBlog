@@ -1,0 +1,27 @@
+{{#each posts as |post|}}
+{{> post-simple}}
+{{/each}}
+
+<hr>
+
+<div class="p-4">
+    <button id="new-post" class="btn btn-primary" type="button">New Post</button>
+</div>
+
+<div id="new-post-details" class="p-4 hidden">
+    <form class="form post-form mt-5">
+        <div class="form-group">
+            <h4>Title:</h4>
+            <input class="form-input" type="text" id="post-title" />
+        </div>
+        <div class="form-group">
+            <h5>Content:</h5>
+            <input class="form-input" type="text" id="post-content" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="js/post.js"></script>
