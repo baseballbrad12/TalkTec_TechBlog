@@ -1,0 +1,76 @@
+<div class="card flex">
+  <header>
+    "{{posts.title}}" ---
+    Posted by: {{Username}}
+  </header>
+  <div class="p-4">
+    <main>
+      <p>{{posts.content}}</p>
+      
+
+      {{#if UserPoster}}
+
+        <div class="p-4">
+          <button id="update-post" class="btn btn-primary" type="button">Update Post</button>
+        </div>
+
+        <div id="update-post-details" class="p-4 hidden">
+          <form class="form post-form mt-5">
+              <div class="form-group">
+                  <h4>Title:</h4>
+                  <input class="form-input" type="text" id="post-title" />
+              </div>
+              <div class="form-group">
+                  <h5>Content:</h5>
+                  <input class="form-input" type="text" id="post-content" />
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+          </form>
+        </div>
+
+        
+      {{/if}}
+    
+    </main>
+  </div>
+</div>
+
+{{!-- Comments section. --}}
+<div class="card flex">
+    <header>Comments: </header>
+  <div class="p-4">
+
+  {{!-- Display existing comments here. --}}
+  {{#each posts.comments as |comment|}}
+    {{>comment-details}}
+  {{/each}}
+
+      {{#if loggedIn}}
+      {{!-- Add the ability to post a comment here --}}
+      <form class="form comment-form mt-5">
+        <div class="form-group">
+          <h4>Title:</h4>
+          <input class="form-input" type="text" id="comment-title" />
+        </div>
+        <div class="form-group">
+          <h5>Comment:</h5>
+          <input class="form-input" type="text" id="comment-content" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Submit Comment</button>
+        </div>
+      </form>
+
+      <script src="/js/comment.js"></script>
+      {{else}}
+      <a href="/login">You must login first to comment on posts.</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+{{#if UserPoster}}
+  <script src="../js/update.js"></script>
+{{/if}}

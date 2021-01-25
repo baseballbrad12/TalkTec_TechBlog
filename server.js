@@ -21,7 +21,7 @@ const SetSession = {
 
 app.use(session(SetSession));
 
-const handbars = exphbs.create({ helpers });
+const handbars = exphandlebars.create({ helpers });
 
 app.engine('handlebars', handbars.engine);
 app.set('view engine', 'handlebars');
