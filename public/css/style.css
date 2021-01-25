@@ -7,7 +7,7 @@
 }
 
 header {
-  padding: 40px;
+  padding: 25px;
   text-align: center;
   background: red;
   color: var(--Angelic);
@@ -23,6 +23,7 @@ nav a {
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 nav a:hover {
@@ -67,6 +68,9 @@ aside {
 img {
   max-width: 100%;
   height: auto;
+  padding-left: 125px;
+  padding-right: 125px;
+  flex: auto;
 }
 
 .painting-details {
@@ -85,7 +89,7 @@ img {
 }
 
 .title {
-  flex: 0 1 300px;
+  flex: 0;
   background-color: var(--Angelic);
   color: var(--dark);
   font-weight: bold;
@@ -96,9 +100,24 @@ img {
   background-color: var(--Angelic);
   color: var(--dark);
 }
-.new-post {
-  margin: 1%;
-  padding: 1%;
+#new-post {
+  padding: 10px;
+  margin: 25px;
+  position: absolute;
+}
+
+#new-post-details {
+  padding: 25px;
+  margin: auto;
+  width: 50%;
+}
+
+#post-title, #post-content {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 .loginContainer, .signupContainer {
@@ -115,17 +134,17 @@ img {
 
 .card header {
   color: var(--Angelic);
+  text-align: left;
   font-weight: bold;
+  font-size: 1.75rem;
   text-transform: uppercase;
   margin: 0;
   background-color: var(--tertiary);
-  padding: 0.625rem;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
 .card-body {
   font-size: 1.4rem;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
 }
 
@@ -134,8 +153,4 @@ img {
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
-}
-
-.hidden {
-  display: none;
 }
